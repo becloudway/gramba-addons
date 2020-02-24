@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/gramba-configurations/aws-s3-configuration/aws-s3-configuration.iml" filepath="$PROJECT_DIR$/gramba-configurations/aws-s3-configuration/aws-s3-configuration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gramba-configurations/aws-secretmanager-configuration/aws-secretmanager-configuration.iml" filepath="$PROJECT_DIR$/gramba-configurations/aws-secretmanager-configuration/aws-secretmanager-configuration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gramba-configurations/aws-ses-configuration/aws-ses-configuration.iml" filepath="$PROJECT_DIR$/gramba-configurations/aws-ses-configuration/aws-ses-configuration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gramba.iml" filepath="$PROJECT_DIR$/gramba.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gramba-annotations/gramba-annotations.iml" filepath="$PROJECT_DIR$/gramba-annotations/gramba-annotations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gramba-configurations/gramba-aws-sdk-configuration/gramba-aws-sdk-configuration.iml" filepath="$PROJECT_DIR$/gramba-configurations/gramba-aws-sdk-configuration/gramba-aws-sdk-configuration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gramba-configurations/gramba-configurations.iml" filepath="$PROJECT_DIR$/gramba-configurations/gramba-configurations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gramba-easy-reflection/gramba-easy-reflection.iml" filepath="$PROJECT_DIR$/gramba-easy-reflection/gramba-easy-reflection.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gramba-native-image/gramba-native-image.iml" filepath="$PROJECT_DIR$/gramba-native-image/gramba-native-image.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gramba-configurations/gramba-runtime-configuration/gramba-runtime-configuration.iml" filepath="$PROJECT_DIR$/gramba-configurations/gramba-runtime-configuration/gramba-runtime-configuration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gramba-starter/gramba-starter.iml" filepath="$PROJECT_DIR$/gramba-starter/gramba-starter.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gramba-configurations/mariadb-configuration/mariadb-configuration.iml" filepath="$PROJECT_DIR$/gramba-configurations/mariadb-configuration/mariadb-configuration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/test/test.iml" filepath="$PROJECT_DIR$/test/test.iml" />
+    </modules>
+  </component>
+</project>

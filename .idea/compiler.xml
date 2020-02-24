@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="aws-s3-configuration" />
+        <module name="aws-secretmanager-configuration" />
+        <module name="aws-ses-configuration" />
+        <module name="gramba-annotations" />
+        <module name="gramba-aws-sdk-configuration" />
+        <module name="gramba-easy-reflection" />
+        <module name="gramba-native-image" />
+        <module name="gramba-runtime-configuration" />
+        <module name="mariadb-configuration" />
+        <module name="test" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="aws-s3-configuration" target="8" />
+      <module name="aws-secretmanager-configuration" target="8" />
+      <module name="aws-ses-configuration" target="8" />
+      <module name="gramba" target="8" />
+      <module name="gramba-annotations" target="8" />
+      <module name="gramba-aws-sdk-configuration" target="8" />
+      <module name="gramba-aws-sdk-configuration (1)" target="8" />
+      <module name="gramba-configurations" target="8" />
+      <module name="gramba-easy-reflection" target="8" />
+      <module name="gramba-native-image" target="8" />
+      <module name="gramba-runtime" target="8" />
+      <module name="gramba-runtime-configuration" target="8" />
+      <module name="gramba-runtime-layer" target="8" />
+      <module name="gramba-starter" target="1.8" />
+      <module name="mariadb-configuration" target="8" />
+      <module name="test" target="8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
