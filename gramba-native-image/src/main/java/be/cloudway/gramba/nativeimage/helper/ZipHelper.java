@@ -1,13 +1,14 @@
 package be.cloudway.gramba.nativeimage.helper;
 
-import org.apache.commons.compress.archivers.ArchiveException;
 import org.apache.commons.compress.archivers.ArchiveOutputStream;
 import org.apache.commons.compress.archivers.ArchiveStreamFactory;
 import org.apache.commons.compress.archivers.zip.ZipArchiveEntry;
 import org.apache.commons.compress.utils.IOUtils;
-import org.apache.maven.plugin.MojoFailureException;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 
 public class ZipHelper {
     public static void toFunctionZip(String toZipFile, String outputFileName) {

@@ -1,15 +1,11 @@
 package be.cloudway.easy.reflection.helpers;
 
-import be.cloudway.easy.reflection.model.ReflectedJson;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.maven.plugin.MojoExecutionException;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class ReflectionJsonFileWriter {
     private static ObjectMapper objectMapper = new ObjectMapper();

@@ -1,7 +1,7 @@
 package be.cloudway.easy.reflection.dependency.configuration.reflection.model;
 
-import be.cloudway.easy.reflection.model.ReflectedField;
 import be.cloudway.easy.reflection.model.ExtendedReflectedJson;
+import be.cloudway.easy.reflection.model.ReflectedField;
 import be.cloudway.easy.reflection.model.ReflectedMethod;
 
 import java.util.ArrayList;

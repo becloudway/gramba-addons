@@ -11,6 +11,8 @@
         <option value="$PROJECT_DIR$/gramba-configurations/gramba-aws-lambda-events-configuration/pom.xml" />
         <option value="$PROJECT_DIR$/gramba-runtime-layer/pom.xml" />
         <option value="$PROJECT_DIR$/gramba-runtime/pom.xml" />
+        <option value="$PROJECT_DIR$/gramba-starter/pom.xml" />
+        <option value="$PROJECT_DIR$/test/pom.xml" />
       </set>
     </option>
   </component>

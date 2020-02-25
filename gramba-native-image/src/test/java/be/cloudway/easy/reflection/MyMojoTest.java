@@ -2,7 +2,6 @@ package be.cloudway.easy.reflection;
 
 
 import org.apache.maven.plugin.testing.MojoRule;
-
 import org.junit.Rule;
 import org.junit.Test;
 

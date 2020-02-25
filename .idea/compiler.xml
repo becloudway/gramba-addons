@@ -6,16 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="aws-s3-configuration" />
-        <module name="aws-secretmanager-configuration" />
-        <module name="aws-ses-configuration" />
         <module name="gramba-annotations" />
-        <module name="gramba-aws-sdk-configuration" />
         <module name="gramba-easy-reflection" />
         <module name="gramba-native-image" />
-        <module name="gramba-runtime-configuration" />
-        <module name="mariadb-configuration" />
-        <module name="test" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -23,6 +16,7 @@
       <module name="aws-secretmanager-configuration" target="8" />
       <module name="aws-ses-configuration" target="8" />
       <module name="gramba" target="8" />
+      <module name="gramba-addons" target="8" />
       <module name="gramba-annotations" target="8" />
       <module name="gramba-aws-sdk-configuration" target="8" />
       <module name="gramba-aws-sdk-configuration (1)" target="8" />

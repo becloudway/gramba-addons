@@ -1,8 +1,8 @@
 package be.cloudway.gramba.configuration.aws.ses;
 
+import be.cloudway.easy.reflection.dependency.configuration.GrambaConfiguration;
 import be.cloudway.easy.reflection.dependency.configuration.reflection.model.ReflectionConfigurationBuilder;
 import be.cloudway.easy.reflection.model.ReflectedJson;
-import be.cloudway.easy.reflection.dependency.configuration.GrambaConfiguration;
 import com.amazonaws.services.simpleemail.model.MessageRejectedException;
 import com.sun.org.apache.xerces.internal.jaxp.DocumentBuilderFactoryImpl;
 

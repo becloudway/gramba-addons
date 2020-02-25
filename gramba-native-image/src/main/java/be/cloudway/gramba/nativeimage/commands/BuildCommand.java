@@ -4,7 +4,6 @@ import be.cloudway.gramba.nativeimage.builder.CommandStringBuilder;
 import org.apache.maven.plugin.logging.Log;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.List;
 
 public class BuildCommand {

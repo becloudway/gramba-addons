@@ -1,9 +1,8 @@
 package be.cloudway.gramba.configuration.aws.secretmanager;
 
+import be.cloudway.easy.reflection.dependency.configuration.GrambaConfiguration;
 import be.cloudway.easy.reflection.dependency.configuration.reflection.model.ReflectionConfigurationBuilder;
 import be.cloudway.easy.reflection.model.ReflectedJson;
-
-import be.cloudway.easy.reflection.dependency.configuration.GrambaConfiguration;
 
 import java.util.List;
 

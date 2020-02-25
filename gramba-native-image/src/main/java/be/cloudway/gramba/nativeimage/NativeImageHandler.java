@@ -9,7 +9,6 @@ import com.spotify.docker.client.LogStream;
 import com.spotify.docker.client.messages.ExecCreation;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
-
 import org.apache.maven.plugin.logging.Log;
 
 import java.io.File;

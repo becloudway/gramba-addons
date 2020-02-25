@@ -11,16 +11,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Maven: be.cloudway:gramba-annotations:1.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: be.cloudway:gramba-easy-reflection:1.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: org.reflections:reflections:0.9.11" level="project" />
-    <orderEntry type="library" name="Maven: com.google.guava:guava:20.0" level="project" />
-    <orderEntry type="library" name="Maven: org.javassist:javassist:3.21.0-GA" level="project" />
-    <orderEntry type="library" name="Maven: com.github.javaparser:javaparser-core:3.13.4" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.9.8" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.9.8" level="project" />
-    <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.9.8" level="project" />
-    <orderEntry type="library" name="Maven: be.cloudway:gramba-runtime:1.0-SNAPSHOT" level="project" />
-    <orderEntry type="library" name="Maven: com.amazonaws:aws-lambda-java-core:1.2.0" level="project" />
+    <orderEntry type="module" module-name="gramba-annotations" />
+    <orderEntry type="module" module-name="gramba-easy-reflection" />
   </component>
 </module>

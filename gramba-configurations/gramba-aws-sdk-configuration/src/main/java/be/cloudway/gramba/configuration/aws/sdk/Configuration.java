@@ -4,7 +4,6 @@ import be.cloudway.easy.reflection.dependency.configuration.proxy.ProxyConfigura
 import be.cloudway.easy.reflection.dependency.configuration.reflection.ReflectionConfigurationInterface;
 import be.cloudway.easy.reflection.dependency.configuration.reflection.model.ReflectionConfigurationBuilder;
 import be.cloudway.easy.reflection.model.ReflectedJson;
-
 import be.cloudway.gramba.annotations.GrambaConfigurationTarget;
 
 import java.util.ArrayList;

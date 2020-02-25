@@ -1,20 +1,13 @@
 package be.cloudway.gramba.nativeimage;
 
 
-import be.cloudway.gramba.nativeimage.commands.BuildCommand;
-import be.cloudway.gramba.nativeimage.helper.ZipHelper;
-import com.spotify.docker.client.DefaultDockerClient;
-import com.spotify.docker.client.DockerClient;
-import com.spotify.docker.client.LogStream;
-import com.spotify.docker.client.messages.*;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugin.MojoExecutionException;
-import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugins.annotations.LifecyclePhase;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
 
-import java.io.*;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 

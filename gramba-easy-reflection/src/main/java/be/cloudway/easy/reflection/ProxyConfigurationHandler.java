@@ -2,7 +2,6 @@ package be.cloudway.easy.reflection;
 
 import be.cloudway.easy.reflection.dependency.configuration.proxy.ProxyConfigurationInterface;
 import be.cloudway.easy.reflection.helpers.ReflectionJsonFileWriter;
-import be.cloudway.easy.reflection.dependency.configuration.GrambaConfiguration;
 import org.apache.maven.plugin.MojoExecutionException;
 
 import java.io.File;

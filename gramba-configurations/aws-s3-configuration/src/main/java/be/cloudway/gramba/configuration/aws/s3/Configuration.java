@@ -1,8 +1,8 @@
 package be.cloudway.gramba.configuration.aws.s3;
 
+import be.cloudway.easy.reflection.dependency.configuration.GrambaConfiguration;
 import be.cloudway.easy.reflection.dependency.configuration.reflection.model.ReflectionConfigurationBuilder;
 import be.cloudway.easy.reflection.model.ReflectedJson;
-import be.cloudway.easy.reflection.dependency.configuration.GrambaConfiguration;
 import com.amazonaws.services.s3.internal.AWSS3V4Signer;
 
 import java.util.List;

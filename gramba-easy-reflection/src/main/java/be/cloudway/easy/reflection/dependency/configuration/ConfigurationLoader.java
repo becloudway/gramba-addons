@@ -1,17 +1,13 @@
 package be.cloudway.easy.reflection.dependency.configuration;
 
-import be.cloudway.easy.reflection.EasyReflection;
 import be.cloudway.gramba.annotations.GrambaConfigurationTarget;
 import org.apache.maven.plugin.MojoFailureException;
-import org.codehaus.plexus.util.reflection.Reflector;
 import org.reflections.Reflections;
-import org.reflections.scanners.SubTypesScanner;
 import org.reflections.util.ClasspathHelper;
 import org.reflections.util.ConfigurationBuilder;
 
 import java.lang.reflect.Constructor;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
