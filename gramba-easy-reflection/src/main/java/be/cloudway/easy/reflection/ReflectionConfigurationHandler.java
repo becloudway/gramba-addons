@@ -5,7 +5,6 @@ import be.cloudway.easy.reflection.dependency.configuration.reflection.PackageSc
 import be.cloudway.easy.reflection.dependency.configuration.reflection.ReflectionConfigurationInterface;
 import be.cloudway.easy.reflection.helpers.ReflectionJsonFileWriter;
 import be.cloudway.easy.reflection.model.ReflectedJson;
-import be.cloudway.gramba.annotations.Reflected;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.reflections.Reflections;
 import org.reflections.scanners.ResourcesScanner;

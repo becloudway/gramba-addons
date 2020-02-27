@@ -60,6 +60,10 @@ public class NativeImageHandler {
 
         try {
             docker = DefaultDockerClient.fromEnv().build();
+            log.info("Pulling docker image: " + m.getDockerImage());
+            docker.pull(m.getDockerImage());
+
+            log.info("Creating Docker container");
             id = dockerHelper.createContainer(docker, m.getBaseDir(), m.getEnvVariables(), m.getDockerImage());
 
             log.info("Starting container");

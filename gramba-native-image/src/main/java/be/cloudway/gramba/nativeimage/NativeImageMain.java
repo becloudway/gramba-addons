@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-@Mojo(name = "build", defaultPhase = LifecyclePhase.NONE)
+@Mojo(name = "build", defaultPhase = LifecyclePhase.PACKAGE)
 public class NativeImageMain
         extends AbstractMojo {
 
@@ -47,7 +47,7 @@ public class NativeImageMain
     private List<String> additionalOptions = new ArrayList<>();
 
     // "oracle/graalvm-ce:1.0.0-rc13"
-    @Parameter(property = "dockerImage", defaultValue = "sirmomster/gramba-imager:latest", readonly = true)
+    @Parameter(property = "dockerImage", defaultValue = "sirmomster/gramba-imager", readonly = true)
     private String dockerImage;
 
     public void execute()
