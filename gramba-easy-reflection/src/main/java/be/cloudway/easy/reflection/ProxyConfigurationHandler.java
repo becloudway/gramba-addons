@@ -28,7 +28,7 @@ public class ProxyConfigurationHandler {
         ProxyConfigurationInterface proxyConfigurationInterface = (ProxyConfigurationInterface) configuration;
 
         System.out.println(proxyConfigurationInterface.getClass().getName());
-        List<List<String>> proxyConfiguration = proxyConfigurationInterface.proxyConfiguration();
+        List<List<String>> proxyConfiguration = proxyConfigurationInterface.proxyConfiguration(new ArrayList<>());
         if (proxyConfiguration == null) return;
 
         proxyConfigurationList.addAll(proxyConfiguration);

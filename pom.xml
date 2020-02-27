@@ -9,7 +9,7 @@
 
     <groupId>be.cloudway</groupId>
     <artifactId>gramba-addons</artifactId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
 
     <properties>
         <jackson.version>2.10.2</jackson.version>
@@ -75,7 +75,7 @@
             <dependency>
                 <groupId>be.cloudway</groupId>
                 <artifactId>gramba-annotations</artifactId>
-                <version>0.0.1</version>
+                <version>0.0.2-SNAPSHOT</version>
                 <scope>compile</scope>
             </dependency>
 
