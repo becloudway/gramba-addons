@@ -46,9 +46,11 @@ public class NativeImageMain
     @Parameter(property = "additionalOptions", readonly = true)
     private List<String> additionalOptions = new ArrayList<>();
 
-    // "oracle/graalvm-ce:1.0.0-rc13"
     @Parameter(property = "dockerImage", defaultValue = "sirmomster/gramba-imager", readonly = true)
     private String dockerImage;
+
+    @Parameter(property = "dockerImageTag", defaultValue = "latest", readonly = true)
+    private String dockerImageTag;
 
     public void execute()
             throws MojoExecutionException {
@@ -97,6 +99,11 @@ public class NativeImageMain
 
     public String getDockerImage() {
         return dockerImage;
+    }
+
+    public String getDockerImageTag() {
+
+        return dockerImageTag;
     }
 }
 
