@@ -99,8 +99,6 @@ public class NativeImageHandler {
             ExecStartResultCallback a = dockerClient.execStartCmd(execCreateCmdResponse.getId()).withDetach(false).withTty(true)
                     .exec(new ExecStartResultCallback(tee, System.err)).awaitCompletion();
 
-            log.info(stdout.toString());
-
             validateOutput(stdout.toString());
             zip(m.isCreateZip(), m.getBaseDir());
 
@@ -110,13 +108,11 @@ public class NativeImageHandler {
             try {
                 stdout.flush();
                 stdout.close();
-
-                tee.flushTeeOnly();
-                tee.closeTeeOnly();
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
 
+            dockerClient.stopContainerCmd(containerId).exec();
             dockerClient.removeContainerCmd(containerId).exec();
         }
 
