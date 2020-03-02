@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/gramba-addons.iml" filepath="$PROJECT_DIR$/gramba-addons.iml" />
       <module fileurl="file://$PROJECT_DIR$/gramba-annotations/gramba-annotations.iml" filepath="$PROJECT_DIR$/gramba-annotations/gramba-annotations.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gramba-aws-lambda-archetype/gramba-aws-lambda-archetype.iml" filepath="$PROJECT_DIR$/gramba-aws-lambda-archetype/gramba-aws-lambda-archetype.iml" />
       <module fileurl="file://$PROJECT_DIR$/gramba-easy-reflection/gramba-easy-reflection.iml" filepath="$PROJECT_DIR$/gramba-easy-reflection/gramba-easy-reflection.iml" />
       <module fileurl="file://$PROJECT_DIR$/gramba-native-image/gramba-native-image.iml" filepath="$PROJECT_DIR$/gramba-native-image/gramba-native-image.iml" />
     </modules>
