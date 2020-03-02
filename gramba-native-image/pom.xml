@@ -5,7 +5,7 @@
     <parent>
         <artifactId>gramba-addons</artifactId>
         <groupId>be.cloudway</groupId>
-        <version>0.0.2</version>
+        <version>0.0.4</version>
     </parent>
 
     <artifactId>gramba-native-image</artifactId>
@@ -24,11 +24,6 @@
     </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>com.spotify</groupId>
-            <artifactId>docker-client</artifactId>
-            <classifier>shaded</classifier>
-        </dependency>
         <dependency>
             <groupId>org.apache.maven</groupId>
             <artifactId>maven-plugin-api</artifactId>
@@ -67,6 +62,11 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.docker-java</groupId>
+            <artifactId>docker-java</artifactId>
+            <version>3.1.5</version>
         </dependency>
     </dependencies>
 

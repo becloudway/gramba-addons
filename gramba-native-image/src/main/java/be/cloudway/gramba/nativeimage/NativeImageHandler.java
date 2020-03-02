@@ -2,15 +2,20 @@ package be.cloudway.gramba.nativeimage;
 
 import be.cloudway.gramba.nativeimage.commands.BuildCommand;
 import be.cloudway.gramba.nativeimage.helper.DockerHelper;
+import be.cloudway.gramba.nativeimage.helper.TeeOutputStream;
 import be.cloudway.gramba.nativeimage.helper.ZipHelper;
-import com.spotify.docker.client.DefaultDockerClient;
-import com.spotify.docker.client.DockerClient;
-import com.spotify.docker.client.LogStream;
-import com.spotify.docker.client.messages.ExecCreation;
+import com.github.dockerjava.api.DockerClient;
+import com.github.dockerjava.api.command.ExecCreateCmdResponse;
+import com.github.dockerjava.api.model.PullResponseItem;
+import com.github.dockerjava.core.DockerClientBuilder;
+import com.github.dockerjava.core.command.ExecStartResultCallback;
+import com.github.dockerjava.core.command.PullImageResultCallback;
+import org.apache.commons.lang.SystemUtils;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugin.MojoFailureException;
 import org.apache.maven.plugin.logging.Log;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 
 public class NativeImageHandler {
@@ -55,51 +60,66 @@ public class NativeImageHandler {
     }
 
     public void run () throws MojoExecutionException {
-        DockerClient docker = null;
-        String id = null;
+        String localDockerHost = SystemUtils.IS_OS_WINDOWS ? "tcp://localhost:2375" : "unix:///var/run/docker.sock";
+        DockerClient dockerClient = DockerClientBuilder.getInstance(localDockerHost).build();
+
+        log.info("Pulling docker image: " + m.getDockerImage() + ":" + m.getDockerImageTag());
+        try {
+            dockerClient.pullImageCmd(m.getDockerImage()).withTag(m.getDockerImageTag())
+                    .exec(new PullImageResultCallback(){
+                        @Override
+                        public void onNext(PullResponseItem item) {
+                            super.onNext(item);
+                        } })
+                    .awaitCompletion();
+            log.info("Finished pulling docker image");
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+        log.info("Creating docker container");
+        String containerId = dockerHelper.createContainer(dockerClient, m.getBaseDir(), m.getEnvVariables(), m.getDockerImage());
+
+        log.info("Starting container");
+        dockerClient.startContainerCmd(containerId)
+                .exec();
+
+        String buildCommand = getCommand();
+
+        String[] command = {"sh", "-c", buildCommand};
+
+        ExecCreateCmdResponse execCreateCmdResponse = dockerClient.execCreateCmd(containerId)
+                .withAttachStdout(true).withCmd(command).exec();
+
+        log.info("Running the following command: " + buildCommand);
+        ByteArrayOutputStream stdout = new ByteArrayOutputStream();
+        TeeOutputStream tee = new TeeOutputStream(stdout, System.out);
 
         try {
-            docker = DefaultDockerClient.fromEnv().build();
-            id = dockerHelper.createContainer(docker, m.getBaseDir(), m.getEnvVariables(), m.getDockerImage());
+            ExecStartResultCallback a = dockerClient.execStartCmd(execCreateCmdResponse.getId()).withDetach(false).withTty(true)
+                    .exec(new ExecStartResultCallback(tee, System.err)).awaitCompletion();
 
-            log.info("Starting container");
-            docker.startContainer(id);
+            log.info(stdout.toString());
 
-            log.info("Starting build of " + m.getJarName() + " this can take some time!");
-
-            String buildCommand = getCommand();
-            log.info("Running the following command --- " + buildCommand);
-
-            String[] command = {"sh", "-c", buildCommand};
-            ExecCreation execCreation = docker.execCreate(
-                    id, command, DockerClient.ExecCreateParam.attachStdout(),
-                    DockerClient.ExecCreateParam.attachStderr());
-
-            LogStream output = docker.execStart(execCreation.id());
-            String execOutput = output.readFully();
-
-            log.info(execOutput);
-
-            validateOutput(execOutput);
+            validateOutput(stdout.toString());
             zip(m.isCreateZip(), m.getBaseDir());
 
-
         } catch (Exception e) {
-            e.printStackTrace();
-            throw new MojoExecutionException(e.getMessage());
+            throw new RuntimeException(e);
         } finally {
-            if (id != null) {
-                try {
-                    docker.killContainer(id);
-                    docker.removeContainer(id);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                    throw new MojoExecutionException(e.getMessage());
-                } finally {
-                    docker.close();
-                    log.info("Finished creating and zipping of native-image");
-                }
+            try {
+                stdout.flush();
+                stdout.close();
+
+                tee.flushTeeOnly();
+                tee.closeTeeOnly();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
             }
+
+            dockerClient.removeContainerCmd(containerId).exec();
         }
+
+
     }
 }
