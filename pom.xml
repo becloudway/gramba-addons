@@ -12,7 +12,7 @@
     <version>0.0.4</version>
 
     <properties>
-        <jackson.version>2.10.2</jackson.version>
+        <jackson.version>2.13.4.1</jackson.version>
         <gramba.version>0.0.1</gramba.version>
     </properties>
 
